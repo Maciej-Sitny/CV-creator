@@ -2,6 +2,7 @@
 // import './App.css';
 import React from 'react'
 import GeneralInfo from './components/GeneralInfo';
+import EduExp from './components/EduExp';
 import Preview from './components/Preview';
 
 //30 minut
@@ -17,23 +18,23 @@ export default function App() {
           email: '',
           description:''
         },
-        education: [
-          {course: '',
+        education: {
+          0:{course: '',
           school:'',
           startDate:'',
           endDate:'',
           description:''
           }
-        ],
-        work: [
-          {
+        },
+        work: {
+          0:{
             company:'',
             position:'',
             startDate:'',
             endDate:'',
             description:'',
           }
-        ]
+        }
         
       })
 
@@ -41,6 +42,7 @@ export default function App() {
         <div className='main'>
           <div className='editSide'>
               <GeneralInfo allInfo= {allInfo} setAllInfo={setAllInfo}/>
+              <EduExp id={0} allInfo= {allInfo} setAllInfo={setAllInfo} if />
           </div>
           <div className = 'previewSide'>
               <Preview />
