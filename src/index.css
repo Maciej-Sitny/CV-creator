@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.generalInfo {
+  display:flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.generalInfo >label {
+  margin-top: 20px;
+  width:100%;
+}
+
+.generalInfo >label>input{
+  margin-top:10px;
+}

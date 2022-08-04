@@ -12,12 +12,30 @@ export default function GeneralInfo(props) {
     
         return (
             <div className='generalInfo'>
-                <input type="text" placeholder='First Name'   onChange={handleChange} value = {props.allInfo.generalInfo.firstName}   name="firstName" id="firstName" maxLength='35'/>
-                <input type="text" placeholder='Last Name'    onChange={handleChange} value = {props.allInfo.generalInfo.lastName}    name="lastName" id="lastName" />
-                <input type="text" placeholder='Address'      onChange={handleChange} value = {props.allInfo.generalInfo.address}     name="address" id="address" />
-                <input type="text" placeholder='Phone Number' onChange={handleChange} value = {props.allInfo.generalInfo.phoneNumber} name="phoneNumber" id="phoneNumber" />
-                <input type="text" placeholder='E-mail'       onChange={handleChange} value = {props.allInfo.generalInfo.email}       name="email" id="email" />
-                <input type="text" placeholder='Description'  onChange={handleChange} value = {props.allInfo.generalInfo.description} name="description" id="description" />
+                <label>
+                    First Name <br/>
+                    <input type="text" onChange={handleChange} value = {props.allInfo.generalInfo.firstName}   name="firstName" id="firstName" maxLength='35'/>
+                </label>
+                <label>
+                    Last Name <br/>
+                    <input type="text" onChange={handleChange} value = {props.allInfo.generalInfo.lastName}    name="lastName" id="lastName" />
+                </label>
+                <label>
+                    Address <br/>
+                    <input type="text" onChange={handleChange} value = {props.allInfo.generalInfo.address}     name="address" id="address" />
+                </label>
+                <label>
+                    Phone Number <br/>
+                    <input type="text" onChange={handleChange} value = {props.allInfo.generalInfo.phoneNumber} name="phoneNumber" id="phoneNumber" />
+                </label>
+                <label>
+                    E-mail <br/>
+                    <input type="text" onChange={handleChange} value = {props.allInfo.generalInfo.email}       name="email" id="email" />
+                </label>
+                <label>
+                    Description <br/>
+                    <textarea onChange={handleChange} value = {props.allInfo.generalInfo.description} name="description" id="description" />
+                </label>
             </div>
         )
     
