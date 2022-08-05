@@ -13,17 +13,17 @@ code {
 }
 
 
-.generalInfo, .education {
+.generalInfo, .education, .work {
   display:flex;
   flex-direction: column;
   width: 300px;
 }
 
-.generalInfo >label, .education>label {
+.generalInfo >label, .education>label, .work>label {
   margin-top: 20px;
   width:100%;
 }
 
-.generalInfo >label>input, .generalInfo >label>textarea, .education>label>input ,.education>label>textarea{
+.generalInfo >label>input, .generalInfo >label>textarea, .education>label>input , .education>label>textarea, .work>label>textarea, .work>label>input{
   margin-top:10px;
 }
