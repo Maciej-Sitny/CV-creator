@@ -73,29 +73,17 @@ export default function App() {
         // console.log(currentIndex);
         setWork(prev=>{
 
-            let copy = {...prev}
-            console.log(copy);
-            copy.work[i] ={}
-            copy.work[i].company=""
-            copy.work[i].position=""
-            copy.work[i].startDate=""
-            copy.work[i].endDate=""
-            copy.work[i].description=""
-            console.log(copy);
-            return {
-                // ...prev,
-                // work:{
-                //     ...prev.work,
-                //     [currentIndex]:{
-                //         company:'',
-                //         position:'',
-                //         startDate:'',
-                //         endDate:'',
-                //         description:'',
-                //     }
-                // }
-                copy
-            }
+          let copy = [...prev]
+          console.log(copy);
+          copy[i] ={}
+          copy[i].company=""
+          copy[i].position=""
+          copy[i].startDate=""
+          copy[i].endDate=""
+          copy[i].description=""
+          console.log(copy);
+          return copy
+            
         })
       }
 

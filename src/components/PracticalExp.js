@@ -119,37 +119,37 @@ export default function PracticalExp(props) {
     
     // function addSection(i) {
         
-    //     // let highest = findHighestKey();
-    //     // console.log(Object.keys(allWorkSections).length)
-    //     // console.log(Object.entries(allWorkSections))
+    // //     // let highest = findHighestKey();
+    // //     // console.log(Object.keys(allWorkSections).length)
+    // //     // console.log(Object.entries(allWorkSections))
         
-    //     // console.log(currentIndex);
-    //     props.setAllInfo(prev=>{
+    // //     // console.log(currentIndex);
+        // props.setAllInfo(prev=>{
 
-    //         let copy = {...prev}
-    //         console.log(copy);
-    //         copy.work[i] ={}
-    //         copy.work[i].company=""
-    //         copy.work[i].position=""
-    //         copy.work[i].startDate=""
-    //         copy.work[i].endDate=""
-    //         copy.work[i].description=""
-    //         console.log(copy);
-    //         return {
-    //             // ...prev,
-    //             // work:{
-    //             //     ...prev.work,
-    //             //     [currentIndex]:{
-    //             //         company:'',
-    //             //         position:'',
-    //             //         startDate:'',
-    //             //         endDate:'',
-    //             //         description:'',
-    //             //     }
-    //             // }
-    //             copy
-    //         }
-    //     })
+        //     let copy = [...prev]
+        //     console.log(copy);
+        //     copy[i] ={}
+        //     copy[i].company=""
+        //     copy[i].position=""
+        //     copy[i].startDate=""
+        //     copy[i].endDate=""
+        //     copy[i].description=""
+        //     console.log(copy);
+        //     return copy
+                // ...prev,
+                // work:{
+                //     ...prev.work,
+                //     [currentIndex]:{
+                //         company:'',
+                //         position:'',
+                //         startDate:'',
+                //         endDate:'',
+                //         description:'',
+                //     }
+                // }
+                
+            
+        // })
         
         // props.allInfo.work[currentIndex.toString()]={}
         // console.log(props.allInfo)
@@ -192,8 +192,8 @@ export default function PracticalExp(props) {
     let siema = props.allInfo
     let dupa = []
 
-    for (let key in siema) {
-        console.log(key)
+    for (let key =0;key<siema.length;key++) {
+        // console.log(key)
         dupa.push(
             (<div key = {key} className="work">
                     <label>
@@ -216,7 +216,7 @@ export default function PracticalExp(props) {
                         Description <br/>
                         <textarea          onChange={e=>{handleChange(e,key)}} value = {siema[key].description}name="description"  />
                     </label>
-                    <button onClick={()=>{props.addSection(key)}}>Add Section</button>
+                    <button onClick={()=>{props.addSection(key+1)}}>Add Section</button>
                 </div>)
         )
     }
