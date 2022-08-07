@@ -10,35 +10,6 @@ import Preview from './components/Preview';
 
 export default function App() {
 
-      const [allInfo,setAllInfo] = React.useState({
-        generalInfo: {
-          firstName: '',
-          lastName: '',
-          address: '',
-          phoneNumber: '',
-          email: '',
-          description:''
-        },
-        education: {
-          0:{course: '',
-          school:'',
-          startDate:'',
-          endDate:'',
-          description:''
-          }
-        },
-        work: {
-          0:{
-            company:'',
-            position:'',
-            startDate:'',
-            endDate:'',
-            description:'',
-          }
-        }
-        
-      })
-
       const [generalInfo,setGeneralInfo] = React.useState({
         firstName: '',
         lastName: '',
@@ -64,35 +35,29 @@ export default function App() {
         description:'',
       }])
 
-      function addSection(i) {
-        
-        // let highest = findHighestKey();
-        // console.log(Object.keys(allWorkSections).length)
-        // console.log(Object.entries(allWorkSections))
-        
-        // console.log(currentIndex);
+      function addWorkSection(i) {
         setWork(prev=>{
-
           let copy = [...prev]
-          console.log(copy);
           copy[i] ={}
           copy[i].company=""
           copy[i].position=""
           copy[i].startDate=""
           copy[i].endDate=""
           copy[i].description=""
-          console.log(copy);
           return copy
             
         })
       }
 
+      function deleteWorkSection(index){
+        setWork(work.filter((section,i)=> index!==i))
+      }
       return (
         <div className='main'>
           <div className='editSide'>
               <GeneralInfo allInfo= {generalInfo} setAllInfo={setGeneralInfo}/>
               <EduExp id={0} allInfo= {education} setAllInfo={setEducation} />
-              <PracticalExp id={0} addSection={addSection} allInfo= {work} setAllInfo={setWork} />
+              <PracticalExp id={0} deleteSection={deleteWorkSection} addSection={addWorkSection} allInfo= {work} setAllInfo={setWork} />
           </div>
           <div className = 'previewSide'>
               <Preview />
