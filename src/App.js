@@ -52,12 +52,37 @@ export default function App() {
       function deleteWorkSection(index){
         setWork(work.filter((section,i)=> index!==i))
       }
+
+      // course: '',
+      // school:'',
+      // startDate:'',
+      // endDate:'',
+      // description:''
+
+      function addEduSection(i) {
+        setEducation(prev=>{
+          let copy = [...prev]
+          copy[i] ={}
+          copy[i].course=""
+          copy[i].school=""
+          copy[i].startDate=""
+          copy[i].endDate=""
+          copy[i].description=""
+          return copy
+            
+        })
+      }
+
+      function deleteEduSection(index){
+        setEducation(education.filter((section,i)=> index!==i))
+      }
+
       return (
         <div className='main'>
           <div className='editSide'>
               <GeneralInfo allInfo= {generalInfo} setAllInfo={setGeneralInfo}/>
-              <EduExp id={0} allInfo= {education} setAllInfo={setEducation} />
-              <PracticalExp id={0} deleteSection={deleteWorkSection} addSection={addWorkSection} allInfo= {work} setAllInfo={setWork} />
+              <EduExp id={0} allInfo= {education} setAllInfo={setEducation} deleteSection={deleteEduSection} addSection={addEduSection} />
+              <PracticalExp id={0} allInfo= {work} setAllInfo={setWork} deleteSection={deleteWorkSection} addSection={addWorkSection} />
           </div>
           <div className = 'previewSide'>
               <Preview />
