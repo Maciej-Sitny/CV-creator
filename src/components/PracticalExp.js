@@ -22,6 +22,7 @@ export default function PracticalExp(props) {
     }
 
     return (<div className="everyWork">
+        <h1>Work Experience</h1>
         {props.allInfo.map((section,key)=>{
         return (<div key = {key} className="work">
                     <label>
@@ -34,17 +35,17 @@ export default function PracticalExp(props) {
                     </label>
                     <label>
                         Start Date <br/>
-                        <input type="date" onChange={e=>{handleChange(e,key)}} value = {section.startDate}  name="startDate"  />
+                        <input type="text" onChange={e=>{handleChange(e,key)}} value = {section.startDate}  name="startDate"  />
                     </label>
                     <label>
                         End Date <br/>
-                        <input type="date" onChange={e=>{handleChange(e,key)}} value = {section.endDate}    name="endDate"  />
+                        <input type="text" onChange={e=>{handleChange(e,key)}} value = {section.endDate}    name="endDate"  />
                     </label> 
                     <label>
                         Description <br/>
                         <textarea          onChange={e=>{handleChange(e,key)}} value = {section.description}name="description"  />
                     </label>
-                    <div>
+                    <div className='buttons'>
                         {key===props.allInfo.length-1 && <button onClick={()=>{props.addSection(key+1)}}>Add Section</button>}
                         <button onClick = {()=>{props.deleteSection(key)}}>Delete Section</button>
                     </div>

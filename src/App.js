@@ -81,8 +81,11 @@ export default function App() {
         <div className='main'>
           <div className='editSide'>
               <GeneralInfo allInfo= {generalInfo} setAllInfo={setGeneralInfo}/>
+              <hr />
               <EduExp id={0} allInfo= {eduInfo} setAllInfo={setEduInfo} deleteSection={deleteEduSection} addSection={addEduSection} />
+              <hr />
               <PracticalExp id={0} allInfo= {workInfo} setAllInfo={setWorkInfo} deleteSection={deleteWorkSection} addSection={addWorkSection} />
+              <hr />
           </div>
           <div className = 'previewSide'>
               <Preview generalInfo={generalInfo} eduInfo={eduInfo} workInfo={workInfo}/>

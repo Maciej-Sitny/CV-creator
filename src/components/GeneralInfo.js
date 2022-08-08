@@ -12,6 +12,7 @@ export default function GeneralInfo(props) {
     
         return (
             <div className='generalInfo'>
+                <h1>Personal Details</h1>
                 <label>
                     First Name <br/>
                     <input type="text" onChange={handleChange} value = {props.allInfo.firstName}   name="firstName" id="firstName" maxLength='35'/>
