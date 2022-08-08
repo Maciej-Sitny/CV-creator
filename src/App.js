@@ -19,7 +19,7 @@ export default function App() {
         description:''
       })
 
-      const [education, setEducation] = React.useState([{
+      const [eduInfo, setEduInfo] = React.useState([{
         course: '',
         school:'',
         startDate:'',
@@ -27,7 +27,7 @@ export default function App() {
         description:''
       }])
 
-      const [work,setWork] = React.useState([{
+      const [workInfo,setWorkInfo] = React.useState([{
         company:'',
         position:'',
         startDate:'',
@@ -36,7 +36,7 @@ export default function App() {
       }])
 
       function addWorkSection(i) {
-        setWork(prev=>{
+        setWorkInfo(prev=>{
           let copy = [...prev]
           copy[i] ={}
           copy[i].company=""
@@ -50,7 +50,7 @@ export default function App() {
       }
 
       function deleteWorkSection(index){
-        setWork(work.filter((section,i)=> index!==i))
+        setWorkInfo(workInfo.filter((section,i)=> index!==i))
       }
 
       // course: '',
@@ -60,7 +60,7 @@ export default function App() {
       // description:''
 
       function addEduSection(i) {
-        setEducation(prev=>{
+        setEduInfo(prev=>{
           let copy = [...prev]
           copy[i] ={}
           copy[i].course=""
@@ -74,18 +74,18 @@ export default function App() {
       }
 
       function deleteEduSection(index){
-        setEducation(education.filter((section,i)=> index!==i))
+        setEduInfo(eduInfo.filter((section,i)=> index!==i))
       }
 
       return (
         <div className='main'>
           <div className='editSide'>
               <GeneralInfo allInfo= {generalInfo} setAllInfo={setGeneralInfo}/>
-              <EduExp id={0} allInfo= {education} setAllInfo={setEducation} deleteSection={deleteEduSection} addSection={addEduSection} />
-              <PracticalExp id={0} allInfo= {work} setAllInfo={setWork} deleteSection={deleteWorkSection} addSection={addWorkSection} />
+              <EduExp id={0} allInfo= {eduInfo} setAllInfo={setEduInfo} deleteSection={deleteEduSection} addSection={addEduSection} />
+              <PracticalExp id={0} allInfo= {workInfo} setAllInfo={setWorkInfo} deleteSection={deleteWorkSection} addSection={addWorkSection} />
           </div>
           <div className = 'previewSide'>
-              <Preview />
+              <Preview generalInfo={generalInfo} eduInfo={eduInfo} workInfo={workInfo}/>
           </div>
         </div>
       )
