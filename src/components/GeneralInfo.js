@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function GeneralInfo(props) {
     
-
         function handleChange(event) {
             props.setAllInfo(prevInfo=>{
                 console.log(props.allInfo)

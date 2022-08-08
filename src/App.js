@@ -1,12 +1,9 @@
-// import logo from './logo.svg';
-// import './App.css';
 import React from 'react'
 import GeneralInfo from './components/GeneralInfo';
 import EduExp from './components/EduExp';
 import PracticalExp from './components/PracticalExp';
 import Preview from './components/Preview';
 
-//30 minut
 
 export default function App() {
 
@@ -34,7 +31,9 @@ export default function App() {
         endDate:'',
         description:'',
       }])
-
+ 
+      const [RODO, setRODO] = React.useState(false)
+      
       function addWorkSection(i) {
         setWorkInfo(prev=>{
           let copy = [...prev]
@@ -53,11 +52,6 @@ export default function App() {
         setWorkInfo(workInfo.filter((section,i)=> index!==i))
       }
 
-      // course: '',
-      // school:'',
-      // startDate:'',
-      // endDate:'',
-      // description:''
 
       function addEduSection(i) {
         setEduInfo(prev=>{
@@ -86,10 +80,15 @@ export default function App() {
               <hr />
               <PracticalExp id={0} allInfo= {workInfo} setAllInfo={setWorkInfo} deleteSection={deleteWorkSection} addSection={addWorkSection} />
               <hr />
+              <label>
+                Include RODO agreement <input className='check' type="checkbox" onClick={()=>{setRODO(prev=> !prev)}}></input>
+                
+              </label>
           </div>
-          <div className = 'previewSide'>
-              <Preview generalInfo={generalInfo} eduInfo={eduInfo} workInfo={workInfo}/>
+          <div className = 'previewSide' style={{height:document.getElementsByClassName('editSide').offsetHeight}}>
+              <Preview generalInfo={generalInfo} eduInfo={eduInfo} workInfo={workInfo} RODO={RODO}/>
           </div>
+          
         </div>
       )
     
